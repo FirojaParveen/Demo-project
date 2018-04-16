@@ -1,0 +1,567 @@
+<html>
+<head>
+ <title>Trappist</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href ="style.css" rel ="stylesheet" type ="text/css" />
+<!-- <link href ="prog.js" type ="text/css" /> -->
+
+<script src="prog.js"></script>
+
+</head>
+<body>
+<!-- /* Administrator.html */ -->
+
+<div class="admin-page">
+    <nav class="navbar navbar-default admin-header">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"> -->
+                    <!-- <span class="sr-only">Toggle navigation</span> -->
+                    <!-- <span class="icon-bar"></span> -->
+                    <!-- <span class="icon-bar"></span> -->
+                    <!-- <span class="icon-bar"></span> -->
+                <!-- </button> -->
+                <!-- <a class="navbar-brand" href="#"><img src="/images/logo.png" alt="Logo" height="18" /></a> -->
+				<div class="logobrand">
+				<a href="#">
+   <img src="logo.png" alt="circle" style="width: 125px; height: 30px;">
+   </a>
+         </div>
+            </div>
+
+           
+                <div class="nav navbar-nav navbar-right">
+                    
+					<!-- <em class="material-icons">help</em> -->
+					<!-- <i class="fa fa-question-circle"></i> -->
+					
+                    <!-- <li class="dropdown"> -->
+                        <!-- <!-- <em e2e="profile-icon" class="material-icons" [mdMenuTriggerFor]="userMenu">account_circle</em> -->
+						<!-- <i class="fa fa-user-circle"></i> -->
+                        <!-- <md-menu #userMenu="mdMenu" [overlapTrigger]="false" xPosition="before"> -->
+                            <!-- <a e2e="profile-btn" md-menu-item [routerLink]="['profile']" role="button">Profile</a> -->
+                            <!-- <button e2e="logout-btn" md-menu-item>Logout</button> -->
+                        <!-- </md-menu> -->
+                    <!-- </li> -->
+					 <div class="dropdown">
+    <a><i class="fa fa-user-circle" data-toggle="dropdown"></i></a>
+    <ul class="dropdown-menu">
+       <li><a href="#">Profile</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </div>
+                </div>
+        
+        </div>
+    </nav>
+
+    <div class="admin-container container-fluid">
+    <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 p0 admin-sidebar">
+                <div class="admin-list">
+                    <ul class="list-group">
+                        <li class="list-group-item" ><a href="#user"><!--<em class="material-icons">person</em>--><i class="fa fa-user"></i><span title="Admin Management">Admin Management</span></a></li>
+                        <li class="list-group-item" [rout><a href="#team"><!--<em class="material-icons">group</em>--><i class="fa fa-users"></i><span title="Team Management">Team Management</span></a></li>
+               <li class="list-group-item" ><a href="#question"><!--<em class="material-icons">assignment</em>--> <i class="fa fa-file-text"></i><span title="Questions Catalogue">Questions Catalogue</span></a></li> 
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 admin-content">
+ <section id="user">
+ <!-- /* list-user */ -->
+
+<div class="admin-block-title">
+    <h2>Admin List</h2>
+</div>
+<div class="admin-area" id="area">
+    <div class="admin-action-area clearfix">
+        <button aria-haspopup="true" [routerLink]="['/user','add']" class="btn btn-primary pull-left" type="submit">
+		<!-- <em class="material-icons">add</em>  -->
+		<i class="fa fa-plus"></i>
+		Add Admin
+		</button>
+        <div class="search-area pull-right">
+            <input type="text" placeholder="Search" name="search" id="search" #search />
+            <button type="button">
+			<!-- <em class="material-icons">search</em> -->
+			<i class="fa fa-search"></i>
+			</button>
+        </div>
+    </div>
+        <div class="grid-container">
+            <table class="data-grid">
+                <thead>
+                    <tr>
+                        <th class="h5">First Name&nbsp;</th>
+                        <th class="h5">Last Name&nbsp;</th>
+                        <th class="h5">Email&nbsp;</th>
+                        <th class="h5">Phone Number&nbsp;</th>
+                        <th class="h5">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Firoja</td>
+                        <td>Parveen</td>
+                        <td>firoja@promactinfo.com</td>
+                        <td>9874563210</td>
+                        <td class="actions text-right">
+						<i class="fa fa-eye-slash"></i>
+							<button class="button_trash" type="button" data-toggle="modal" data-target="#myModal">	<i class="fa fa-trash" ></i> </button>
+                            <!-- <em class="material-icons" [routerLink]="['/user','edit','1']">mode_edit</em> -->
+                            <!-- <em class="material-icons ml15" (click)="userDeleteDialog()">delete</em> -->
+                        </td>
+                    </tr>
+					<tr>
+                        <td>Dipa</td>
+                        <td>Majumdar</td>
+                        <td>dipa@promactinfo.com</td>
+                        <td>9874563210</td>
+                        <td class="actions text-right">
+						<i class="fa fa-eye-slash"></i>
+							<button class="button_trash" type="button" data-toggle="modal" data-target="#myModal">	<i class="fa fa-trash" ></i> </button>
+                            <!-- <em class="material-icons" [routerLink]="['/user','edit','1']">mode_edit</em> -->
+                            <!-- <em class="material-icons ml15" (click)="userDeleteDialog()">delete</em> -->
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <td>Adwitiya</td>
+                        <td>Das</td>
+                        <td>adwitiya@promactinfo.com</td>
+                        <td>9874563210</td>
+                        <td class="actions text-right">
+						<i class="fa fa-eye-slash"></i>
+						<button class="button_trash" type="button" data-toggle="modal" data-target="#myModal">	<i class="fa fa-trash" ></i> </button>
+                            <!-- <em class="material-icons" [routerLink]="['/user','edit','1']">mode_edit</em> -->
+                            <!-- <em class="material-icons ml15" (click)="userDeleteDialog()">delete</em> -->
+                        </td>
+                    </tr>
+					<tr>
+                        <td>Debojyoti</td>
+                        <td>Chakraborty</td>
+                        <td>debojyoti@promactinfo.com</td>
+                        <td>9874563210</td>
+                        <td class="actions text-right">
+						<i class="fa fa-eye-slash"></i>
+					 <button class="button_trash" type="button" data-toggle="modal" data-target="#myModal">	<i class="fa fa-trash" ></i> </button>
+                            <!-- <em class="material-icons" [routerLink]="['/user','edit','1']">mode_edit</em> -->
+                            <!-- <em class="material-icons ml15" (click)="userDeleteDialog()">delete</em> -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"><b>DELETE CONFIRMATION<b></h4>
+      
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+         are you sure want to delete?
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+           <button type="button" class="btn" data-dismiss="modal">No</button>
+        <button type="submit" class="btn btn-primary">Yes</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+  
+<div class="admin-block-title">
+    <h2>Add Admin</h2>
+</div>
+<div class="admin-form">
+    <form name="myForm">
+        <div class="form-area">
+            <fieldset>
+                <div class="form-group inline-field">
+                    <label>First Name:</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name" name="fname">
+                    <div class="errors-container">
+                        <span class="error-msg">*Field Required</span>
+                    </div>
+                </div>
+                <div class="form-group inline-field">
+                    <label>Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" name="lname">
+                    <div class="errors-container">
+                        <span class="error-msg">*Field Required</span>
+                    </div>
+                </div>
+                <div class="form-group inline-field">
+                    <label>Email:</label>
+                    <input type="email" class="form-control" id="emailAddress" placeholder="Email" name="eAdress">
+                    <div class="errors-container">
+                        <span class="error-msg">*Email must be in format.</span>
+                    </div>
+                </div>
+                <div class="form-group inline-field">
+                    <label>Phone Number:</label>
+                    <input type="text" class="form-control" id="phNo" placeholder="Phone number" name="ph_no">
+                    <div class="errors-container">
+                        <span class="error-msg">*Phone Number must contain only integers</span>
+                    </div>
+                </div>               
+                    <div class="mt20">
+                        <button class="btn btn-primary" type="button" id="Button" onclick="clickmethod()"> Create</button>
+                        <button class="btn" type="button" tabindex="0">Back</button>
+                    </div>
+               
+            </fieldset>
+        </div>
+    </form>
+</div>
+
+
+</section>
+
+
+<section id="team">
+
+<!-- /* list-team */ -->
+
+<div class="admin-block-title">
+    <h2>Team List</h2>
+</div>
+<div class="admin-area" id="area">
+    <div class="admin-action-area clearfix">
+        <button aria-haspopup="true" class="btn btn-primary h5  pull-left" type="submit">
+		<!-- <em class="material-icons">add</em> -->
+		<i class="fa fa-plus"></i>
+		Add Team
+		</button>
+        <div class="search-area pull-right">
+            <input type="text" placeholder="Search" name="search" id="search" #search />
+            <button type="button">
+			<!-- <em class="material-icons">search</em> -->
+			<i class="fa fa-search"></i>
+			</button>
+        </div>
+    </div>
+        <div class="grid-container">
+            <table class="data-grid">
+                <thead>
+                    <tr>
+                        <th class="h5">Team Name&nbsp;</th>
+                        <th class="h5">Team Admin's Name&nbsp;</th>
+                        <th class="h5">Email&nbsp;</th>
+                        <th class="h5">Phone Number&nbsp;</th>
+                        <th class="h5">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hufflepuff</td>
+                        <td>Firoja</td>
+                        <td>firoja@promactinfo.com</td>
+                        <td>9874563210</td>
+                        <td class="actions text-right">
+						<i class="fa fa-eye-slash"></i>
+						 <button class="button_trash" type="button" data-toggle="modal" data-target="#myModal1">	<i class="fa fa-trash" ></i> </button>
+                            <!-- <em class="material-icons" [routerLink]="['/team','edit','1']">mode_edit</em> -->
+                            <!-- <em class="material-icons ml15" (click)="teamDeleteDialog()">delete</em> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gryffindor</td>
+                        <td>Dipa</td>
+                        <td>dipa@promactinfo.com</td>
+                        <td>9630258741</td>
+                        <td class="actions text-right">
+						<i class="fa fa-eye-slash"></i>
+						 <button class="button_trash" type="button" data-toggle="modal" data-target="#myModal1">	<i class="fa fa-trash" ></i> </button>
+                            <!-- <em class="material-icons" [routerLink]="['/team','edit','1']">mode_edit</em> -->
+                            <!-- <em class="material-icons ml15" (click)="teamDeleteDialog()">delete</em> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ravenclaw</td>
+                        <td>Adwitiya</td>
+                        <td>adwitiya@promactinfo.com</td>
+                        <td>95135748620</td>
+                        <td class="actions text-right">
+						<i class="fa fa-eye-slash"></i>
+						 <button class="button_trash" type="button" data-toggle="modal" data-target="#myModal1">	<i class="fa fa-trash" ></i> </button>
+                            <!-- <em class="material-icons" [routerLink]="['/team','edit','1']">mode_edit</em> -->
+                            <!-- <em class="material-icons ml15" (click)="teamDeleteDialog()">delete</em> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Slytherin</td>
+                        <td>Debojyoti</td>
+                        <td>debojyoti@promactinfo.com</td>
+                        <td>9638520741</td>
+                        <td class="actions text-right">
+						<i class="fa fa-eye-slash"></i>
+						 <button class="button_trash" type="button" data-toggle="modal" data-target="#myModal1">	<i class="fa fa-trash" ></i> </button>
+                            <!-- <em class="material-icons" [routerLink]="['/team','edit','1']">mode_edit</em> -->
+                            <!-- <em class="material-icons ml15" (click)="teamDeleteDialog()">delete</em> -->
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+			
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"><b>DELETE CONFIRMATION<b></h4>       
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+         are you sure want to delete?
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+           <button type="button" class="btn" data-dismiss="modal">No</button>
+        <button type="submit" class="btn btn-primary">Yes</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /* team form */ -->
+<div class="admin-block-title">
+    <h2>Add Team</h2>
+</div>
+<div class="admin-form">
+   <form name="myForm1">
+        <div class="form-area">
+            <fieldset>
+                <div class="form-group inline-field">
+                    <label>First Name:</label>
+                    <input type="text" class="form-control" id="firstName1" placeholder="First Name" name="fname">
+                    <div class="errors-container">
+                        <span class="error-msg">*Field Required</span>
+                    </div>
+                </div>
+                <div class="form-group inline-field">
+                    <label>Last Name:</label>
+                    <input type="text" class="form-control" id="lastName1" placeholder="Last Name" name="lname">
+                    <div class="errors-container">
+                        <span class="error-msg">*Field Required</span>
+                    </div>
+                </div>
+                <div class="form-group inline-field">
+                    <label>Email:</label>
+                    <input type="email" class="form-control" id="emailAddress1" placeholder="Email" name="eAdress">
+                    <div class="errors-container">
+                        <span class="error-msg">*Email must be in format</span>
+                    </div>
+                </div>
+                <div class="form-group inline-field">
+                    <label>Phone Number:</label>
+                    <input type="text" class="form-control" id="phNo1" placeholder="Phone number" name="ph_no1">
+                    <div class="errors-container">
+                        <span class="error-msg">*Phone number must contain only integers</span>
+                    </div>
+                </div>               
+                    <div class="mt20">
+                        <button class="btn btn-primary" type="button" id="Button1" onclick="clickbutton()"> Create</button>
+                        <button class="btn" type="button" tabindex="0">Back</button>
+                    </div>
+               
+            </fieldset>
+        </div>
+    </form>
+</div>
+
+</section>
+<section id="question">
+<div class="container">
+    <div class="questions-dashboard">
+        <div class="title-area mb20 clearfix">
+            <h1 class="pull-left">Questions</h1>
+            <div class="search-area pull-right">
+                <input type="text" placeholder="Search questions"  name="search" id="search" #search />
+               <button type="button">
+			<!-- <em class="material-icons">search</em> -->
+			<i class="fa fa-search"></i>
+			</button>
+            </div>
+        </div>
+        <div class="main-block">
+            <div class="category-block">
+                <div class="block-title clearfix">
+                    <h2 class="pull-left">Sections</h2>
+                    <i class="fa fa-plus pull-right"></i>
+                </div>
+                <ul class="category-list">
+                  <li class="h5" >All Questions</li>  
+				  <li class="clearfix h5" >
+                        <span title="Agile &amp; Scrum Methodology">Agile &amp; Scrum Methodology</span>
+                        <i class="fa fa-ellipsis-v"></i> </li>
+					
+					<li class="clearfix h5">
+                        <span title="CSS">CSS</span>
+                      <a><i class="fa fa-ellipsis-v"></i></a>
+					   </li>
+					<li class="clearfix h5" >
+                        <span title="HTML">HTML</span>
+                        <a><i class="fa fa-ellipsis-v"></i></a>
+						</li>
+						<li class="clearfix h5">
+                        <span title="Javascript">Javascript</span>
+                        <a><i class="fa fa-ellipsis-v"></i></a>
+						</li>
+						 <li class="clearfix h5" >
+                        <span title="GIT">GIT</span>
+                        <a><i class="fa fa-ellipsis-v"></i></a>
+						</li>
+						<li class="clearfix h5 active">
+                        <span title="Coding">Coding</span>
+                        <a><i class="fa fa-ellipsis-v"></i></a>
+						</li>
+						
+                </ul>
+            </div>
+            <div class="questions-block">
+               
+                <div class="block-title">
+                    <h2 >Coding</h2>
+                </div>
+               <div class="block-subtitle clearfix">
+                    <button aria-haspopup="true" class="btn-link h5 hidden-md hidden-lg" type="button" >   <i class="fa fa-plus"></i> Add New Question</button>
+                    <ul class="difficulty-levels pull-left">
+                        <li class="h5 active" >Total</li>
+                        <li class="h5">Easy</li>
+                        <li class="h5">Medium</li>
+                        <li class="h5">Hard</li>
+                    </ul>
+                    <button aria-haspopup="true" class="btn-link h5 hidden-sm hidden-xs pull-right" type="button" ng-reflect-menu="[object Object]">
+					   <i class="fa fa-plus"></i> Add New Question</button>
+                 
+                </div>
+         <div class="questions-area" >
+                    
+<div class="qs-block clearfix">
+                            <div class="pull-left">
+                                <div class="qs-container">
+                                    <p class="qs-num">Q.1</p>
+                                    <div class="qs-text">
+                                        <p class="question"><p>Write a program to add two numbers and print the result.</p>
+                                        </p>
+                                       
+                                    </div>
+                                </div>
+                                <div class="mt10">
+                                    <p class="tags">Coding</p>
+                                    <p class="tags">Easy</p>
+                                </div>
+                            </div>
+                           <a> <i class="fa fa-ellipsis-v"></i> </a>
+						   </div>
+							<div class="qs-block clearfix">
+                            <div class="pull-left">
+                                <div class="qs-container">
+                                    <p class="qs-num">Q.2</p>
+                                    <div class="qs-text">
+                                        <p class="question"><p>Write a program to print fibonacci series</p>
+                                      </p>
+                                     
+                                    </div>
+                                </div>
+                                <div class="mt10">
+                                    <p class="tags">Coding</p>
+                                    <p class="tags">Easy</p>
+                                </div>
+                            </div>
+                            <a><i class="fa fa-ellipsis-v"></i></a>
+							</div>
+							<div class="qs-block clearfix">
+                            <div class="pull-left">
+                                <div class="qs-container">
+                                    <p class="qs-num">Q.3</p>
+                                    <div class="qs-text">
+                                        <p class="question"><p>Write a program to check whether it is palindrome or not</p>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mt10">
+                                    <p class="tags">Coding</p>
+                                    <p class="tags">Easy</p>
+                                </div>
+                            </div>
+                           <a> <i class="fa fa-ellipsis-v"></i> </a>
+							
+							</div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+            </div><!--col-lg-10-->
+        </div> <!--row-->
+    </div> <!--admin-container-->
+    <footer class="admin-footer">2018 © Promact Infotech</footer>
+</div> <!--admin-page-->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
